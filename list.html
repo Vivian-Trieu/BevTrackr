@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>List Page</title>
+    <!-- Include Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <script>
+        // Initialize Firebase
+        var firebaseConfig = {
+            // Your Firebase configuration
+            apiKey: "AIzaSyDj0QJk8Ptz0N_WjHg76iFhY3f2fBmStcM",
+            authDomain: "app-to-test-multiple-users.firebaseapp.com",
+            databaseURL: "https://app-to-test-multiple-users-default-rtdb.firebaseio.com/",
+            projectId: "app-to-test-multiple-users",
+            storageBucket: "app-to-test-multiple-users.appspot.com",
+            messagingSenderId: "342422003892",
+            appId: "1:342422003892:web:7d0070e376d055c29737e1"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        // Get a reference to the Firebase database
+        var database = firebase.database();
+
+        // Retrieve the list data from Firebase and display it
+        function displayListData() {
+            var listContainer = document.getElementById("listContainer");
+
+            // Retrieve the data from Firebase
+            database.ref("listData").once("value", function (snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                    var listItem = childSnapshot.val();
+                    var listItemText = listItem.text;
+
+                    // Create and append a new list item element
+                    var newListItem = document.createElement("li");
+                    newListItem.classList.add("list-item");
+                    newListItem.textContent = listItemText;
+                    listContainer.appendChild(newListItem);
+                });
+            });
+        }
+
+        // Listen for changes in the selected option and update the list display
+        function listenForSelectedOption() {
+            var listItems = document.getElementsByClassName("list-item");
+
+            database.ref("selectedOption").on("value", function (snapshot) {
+                var selectedOption = snapshot.val();
+
+                for (var i = 0; i < listItems.length; i++) {
+                    var listItem = listItems[i];
+
+                    if (listItem.textContent.trim() === selectedOption) {
+                        listItem.classList.add("selected");
+                    } else {
+                        listItem.classList.remove("selected");
+                    }
+                }
+            });
+        }
+    </script>
+
+    <style>
+        .selected {
+            color: red;
+        }
+    </style>
+</head>
+
+<body onload="displayListData(); listenForSelectedOption()">
+    <h1>List Page</h1>
+    <ul id="listContainer">
+        <!-- List items will be dynamically populated -->
+    </ul>
+
+    <!-- Include Firebase configuration and initialization -->
+    <script src="firebase-config.js"></script>
+</body>
+
+</html>
