@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Golf Holes</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+    <!-- Add the Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script>
+        // Initialize Firebase
+        var firebaseConfig = {
+            apiKey: "AIzaSyDj0QJk8Ptz0N_WjHg76iFhY3f2fBmStcM",
+            authDomain: "app-to-test-multiple-users.firebaseapp.com",
+            databaseURL: "https://app-to-test-multiple-users-default-rtdb.firebaseio.com",
+            projectId: "app-to-test-multiple-users",
+            storageBucket: "app-to-test-multiple-users.appspot.com",
+            messagingSenderId: "342422003892",
+            appId: "1:342422003892:web:77cae1a2d537be989737e1"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        function updatePingStatus() {
+            var dropdown = document.getElementById("holeDropdown");
+            var selectedHole = dropdown.options[dropdown.selectedIndex].value;
+
+            // Update the ping status in the Firebase database
+            firebase.database().ref('listData/' + 'hole' + selectedHole).update({
+                ping: true
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Select a Golf Hole</h1>
+        <select id="holeDropdown" onchange="updatePingStatus()">
+            <option value="">Select a hole</option>
+            <option value="1">Hole 1</option>
+            <option value="2">Hole 2</option>
+            <option value="3">Hole 3</option>
+            <option value="4">Hole 4</option>
+            <option value="5">Hole 5</option>
+            <option value="6">Hole 6</option>
+
+            <!-- Add more options for additional holes -->
+        </select>
+    </div>
+</body>
+
+</html>
