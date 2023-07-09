@@ -22,13 +22,12 @@
             storageBucket: "app-to-test-multiple-users.appspot.com",
             messagingSenderId: "342422003892",
             appId: "1:342422003892:web:77cae1a2d537be989737e1"
+
         };
 
         firebase.initializeApp(firebaseConfig);
 
         function updatePingStatus() {
-            let statusText = document.querySelector("#status-text");
-            
             var dropdown = document.getElementById("holeDropdown");
             var selectedHole = dropdown.options[dropdown.selectedIndex].value;
 
@@ -36,17 +35,36 @@
             firebase.database().ref('listData/' + 'hole' + selectedHole).update({
                 ping: true
             });
-
-            statusText.textContent = "Cart Request is waiting to be accepted..."
         }
+
+        // Listen for changes in the ping status
+        firebase.database().ref('listData').on('value', function (snapshot) {
+            var holeData = snapshot.val();
+            var dropdown = document.getElementById("holeDropdown");
+            var selectedHole = dropdown.options[dropdown.selectedIndex].value;
+
+            if (holeData && holeData['hole' + selectedHole]) {
+                var pingStatus = holeData['hole' + selectedHole].ping;
+
+                var statusText = document.querySelector("#status-text");
+
+                if (selectedHole !== "" && pingStatus) {
+                    // If ping is true for a selected hole, display "Cart Request is waiting to be accepted..."
+                    statusText.textContent = "Cart Request is waiting to be accepted...";
+                } else if (statusText.textContent === "Cart Request is waiting to be accepted...") {
+                    // If ping is false and the previous status text was "Cart Request is waiting to be accepted...",
+                    // update the status text to "Bev Cart Driver is on their way."
+                    statusText.textContent = "Bev Cart Driver is on their way.";
+                }
+            }
+        });
     </script>
 </head>
 
 <body>
     <div class="container">
         <h1>Select a Golf Hole</h1>
-        
-            <select id="holeDropdown">
+        <select id="holeDropdown">
             <option value="">Select a hole</option>
             <option value="1">Hole 1</option>
             <option value="2">Hole 2</option>
@@ -54,8 +72,6 @@
             <option value="4">Hole 4</option>
             <option value="5">Hole 5</option>
             <option value="6">Hole 6</option>
-
-            <!-- <select id="holeDropdown" onchange="updatePingStatus()"> -->
         </select>
 
         <button id="request-btn" onclick="updatePingStatus()">
