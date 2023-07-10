@@ -27,6 +27,8 @@
         firebase.initializeApp(firebaseConfig);
 
         function updatePingStatus() {
+            let statusText = document.querySelector("#status-text");
+            
             var dropdown = document.getElementById("holeDropdown");
             var selectedHole = dropdown.options[dropdown.selectedIndex].value;
 
@@ -34,6 +36,8 @@
             firebase.database().ref('listData/' + 'hole' + selectedHole).update({
                 ping: true
             });
+
+            statusText.textContent = "Cart Request is waiting to be accepted..."
         }
     </script>
 </head>
@@ -57,6 +61,8 @@
         <button id="request-btn" onclick="updatePingStatus()">
             Request BevCart
         </button>
+
+        <h2 id="status-text"></h2>
     </div>
 </body>
 
