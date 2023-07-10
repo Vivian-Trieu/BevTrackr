@@ -27,6 +27,14 @@
 
         firebase.initializeApp(firebaseConfig);
 
+    // Function to redirect to TimeOut.html
+    function redirectToTimeoutPage() {
+        window.location.href = "TimeOut.html";
+    }
+
+    // Set a timer to redirect after 1 minute (60000 milliseconds is one minute)
+    setTimeout(redirectToTimeoutPage, 60000); 
+
         function updatePingStatus() {
             var dropdown = document.getElementById("holeDropdown");
             var selectedHole = dropdown.options[dropdown.selectedIndex].value;
