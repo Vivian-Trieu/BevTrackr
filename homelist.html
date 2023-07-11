@@ -9,7 +9,7 @@
             margin-top: 50px;
         }
 
-        #message {
+         #message {
             text-align: center;
             margin-top: 50px;
         }
@@ -91,23 +91,23 @@
             }
         });
 
-        
-        // window.onload = timing; // comment out this line to turn off the timing feature
+
+        //window.onload = timing; // comment out this line to turn off the timing feature
 
         function timing() {
             let currentTime = new Date();
-            
+
             let hours = currentTime.getHours();
             console.log(hours);
             var startTime = 14; // 2pm
             var endTime = 18;   // 6pm
 
             if (hours >= startTime && hours < endTime) {
-                // Webiste will be displayed
+                //
                 document.getElementById("message").style.display = "none";
                 document.getElementById("main").style.display = "block";
             } else {
-                // "bevcart not available at this time" message will appear
+                // Website is not accessible
                 document.getElementById("message").style.display = "block";
                 document.getElementById("main").style.display = "none";
             }
@@ -136,7 +136,6 @@
     </div>
 
     <div id="message">BevCart's operational hours are 2pm-6pm</div>
-    
 </body>
 
 </html>
