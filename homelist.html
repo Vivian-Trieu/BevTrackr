@@ -4,7 +4,12 @@
 <head>
     <title>Golf Holes</title>
     <style>
-        .main {
+        #main {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #message {
             text-align: center;
             margin-top: 50px;
         }
@@ -98,11 +103,11 @@
             var endTime = 18;   // 6pm
 
             if (hours >= startTime && hours < endTime) {
-                //
+                // Webiste will be displayed
                 document.getElementById("message").style.display = "none";
                 document.getElementById("main").style.display = "block";
             } else {
-                // Website is not accessible
+                // "bevcart not available at this time" message will appear
                 document.getElementById("message").style.display = "block";
                 document.getElementById("main").style.display = "none";
             }
@@ -130,7 +135,8 @@
         <h2 id="status-text"></h2>
     </div>
 
-        <div id="message">BevCart's operational hours are 2pm-6pm</div>
+    <div id="message">BevCart's operational hours are 2pm-6pm</div>
+    
 </body>
 
 </html>
