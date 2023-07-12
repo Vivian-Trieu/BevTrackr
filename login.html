@@ -32,13 +32,14 @@
             firebase.auth().signInWithEmailAndPassword(email, password)
                 .then(function (userCredential) {
                     // Successful login, redirect to list page
-                    window.location.href = "list.html";
+                    window.location.href = "drivelist.html";
                 })
                 .catch(function (error) {
                     // Unsuccessful login, show alert
                     alert("Login unsuccessful. Please try again.");
                 });
         }
+        
     </script>
     <style>
         .content {
@@ -58,7 +59,7 @@
         <label for="password">Password:</label><br>
         <input type="password" id="password" required><br><br>
 
-        <button type="button" onclick="authenticateUser()">Login</button>
+        <button type="button" onclick="authenticateUser()">Log in</button>
 
         <button id="formButton">Sign Up</button>
         
