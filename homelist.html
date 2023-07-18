@@ -14,20 +14,24 @@
 <body>
     <div id="main">
         <h1>Select a Golf Hole</h1>
-        <select id="holeDropdown">
-            <option value="">Select a hole</option>
-            <option value="1">Hole 1</option>
-            <option value="2">Hole 2</option>
-            <option value="3">Hole 3</option>
-            <option value="4">Hole 4</option>
-            <option value="5">Hole 5</option>
-            <option value="6">Hole 6</option>
-        </select>
 
-        <button id="request-btn" onclick="updatePingStatus()">
-            Request BevCart
-        </button>
+        <div class="container">
+            <select id="holeDropdown">
+                <option value="">Select a hole</option>
+                <option value="1">Hole 1</option>
+                <option value="2">Hole 2</option>
+                <option value="3">Hole 3</option>
+                <option value="4">Hole 4</option>
+                <option value="5">Hole 5</option>
+                <option value="6">Hole 6</option>
+            </select>
 
+            <br><br>
+
+            <button id="request-btn" onclick="updatePingStatus()">
+                Request BevCart
+            </button>
+        </div>
         <h2 id="status-text"></h2>
     </div>
 
