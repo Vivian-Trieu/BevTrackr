@@ -17,7 +17,7 @@ function redirectToTimeoutPage() {
 }
 
 // Set a timer to redirect after 1 minute (60000 milliseconds is one minute)
-setTimeout(redirectToTimeoutPage, 60000);
+setTimeout(redirectToTimeoutPage, 1200000);
 
 function updatePingStatus() {
     var dropdown = document.getElementById("holeDropdown");
