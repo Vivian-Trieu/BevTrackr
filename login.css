@@ -8,19 +8,16 @@ h1 {
 body {
     font-family: 'Segoe UI';
     font-size: 15px;
-    background: url("golfcourse.jpg") no-repeat center center fixed; 
-    background-size: cover;
-    /* Uncomment this and delete the two lines above to set the background color back to green
     background: -webkit-linear-gradient(to right, #508962, #306a4a);
     background: linear-gradient(to right, #508962, #306a4a);
-    */
     color: #508962;
+    font-weight: 500;
 }   
 
 h3 {
     text-align: center;
     font-size: 25px;
-    font-weight:400;
+    font-weight:500;
 }
 
 input[type=email], input[type=password]{
@@ -30,7 +27,7 @@ input[type=email], input[type=password]{
     padding: 15px 18px;
     box-sizing: border-box;
     border: 2px solid lightgray;
-  }
+}
 
 button {
     background-color: #508962;
@@ -41,20 +38,21 @@ button {
     width: 100%;
     font-size: 18px;
     border: transparent;
+    text-transform: uppercase;
 }
 
 button:hover {
-    opacity: 0.6;
+    opacity: 0.8;
     cursor: pointer;
 }
 
-form{
-    width:35rem;
+form {
+    width:25em;
     margin: auto;
     color: #508962;
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.507);
+    background-color: rgba(255, 255, 255, 0.63);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
     padding: 20px 30px 30px 30px;

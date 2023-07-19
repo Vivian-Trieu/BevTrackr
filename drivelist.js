@@ -46,3 +46,15 @@ document.addEventListener("DOMContentLoaded", function () {
         listenForPingChanges(hole, buttons[i]);
     }
 });
+
+// Shows what button is clicked to be displayed on text area
+const textArea = document.getElementsByClassName('textArea')[0];
+const buttons = document.getElementsByClassName('holeButton');
+
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function(event) {
+        const buttonText = event.target.textContent;
+        textArea.value = buttonText;
+    }); 
+}
+

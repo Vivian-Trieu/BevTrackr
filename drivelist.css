@@ -1,3 +1,29 @@
+h1 {
+    text-align: center;
+    font: 40px 'Segoe UI';
+    color: white;
+    margin-top: 3rem;
+}
+
+body {
+    font-family: 'Segoe UI';
+    font-size: 15px;
+    background: -webkit-linear-gradient(to right, #508962, #306a4a);
+    background: linear-gradient(to right, #508962, #306a4a);
+}   
+
+.textArea {
+    width: 150px;
+    height: 50px;
+    resize: none;
+    text-align: center;
+    padding-top: 15px;
+    background-color: #306a4a;
+    border-radius: 5px;
+    font: 25px 'Segoe UI';
+    color: white;
+}
+
 .container {
     text-align: center;
     margin-top: 50px;
@@ -13,6 +39,14 @@
     text-align: center;
     padding: 15px 30px;
     border: none;
+    border-radius: 5px;
+    font: 15px 'Segoe UI';
+    color: #306a4a;
+}
+
+.holeButton:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 .pinged {
