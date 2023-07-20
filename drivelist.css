@@ -14,10 +14,11 @@ body {
 
 .textArea {
     width: 150px;
-    height: 50px;
+    height: 30px;
     resize: none;
+    margin-top: 15px;
     text-align: center;
-    padding-top: 15px;
+    padding: 15px 1px;
     background-color: #306a4a;
     border-radius: 5px;
     font: 25px 'Segoe UI';
@@ -31,7 +32,7 @@ body {
 }
 
 .holeButton {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -44,13 +45,34 @@ body {
     color: #306a4a;
 }
 
+#hole6 {
+    margin-bottom: 0px;
+}
+
+.buttonBackground {
+    width:15em;
+    margin: auto;
+    color: #508962;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.63);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 20px 30px 30px 30px;
+    
+}
+
+hr {
+    margin-top: 30px;
+}
+
 .holeButton:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
 .pinged {
-    background-color: rgb(178, 25, 25);
-    box-shadow: 0 0 20px 5px #ec3131;
+    background-color: #306a4a;
+    box-shadow: 0 0 15px 5px #ffffff;
     color: white;
 }
