@@ -1,5 +1,5 @@
- // Initialize Firebase
- var firebaseConfig = {
+// Initialize Firebase
+var firebaseConfig = {
     apiKey: "AIzaSyDj0QJk8Ptz0N_WjHg76iFhY3f2fBmStcM",
     authDomain: "app-to-test-multiple-users.firebaseapp.com",
     databaseURL: "https://app-to-test-multiple-users-default-rtdb.firebaseio.com",
@@ -30,12 +30,33 @@ function listenForPingChanges(hole, button) {
     firebase.database().ref('listData/hole' + hole + '/ping').on('value', function (snapshot) {
         var pingValue = snapshot.val();
 
+        // Check if the ping value changed from true to false
+        if (pingValue === false) {
+            latestButtonElement.textContent = button.textContent;
+        }
+
+        // Update the button color based on the ping status
         if (pingValue === true) {
             button.classList.add('pinged');
         } else {
             button.classList.remove('pinged');
         }
     });
+}
+
+// Shows what button is clicked to be displayed in the h3 tag
+const latestButtonElement = document.getElementById('latestButton');
+const buttons = document.getElementsByClassName('holeButton');
+
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function(event) {
+        const buttonText = event.target.textContent;
+        
+        // Only update the text content if the button has the "pinged" class
+        if (event.target.classList.contains('pinged')) {
+            latestButtonElement.textContent = buttonText;
+        }
+    }); 
 }
 
 // Call listenForPingChanges for each hole
@@ -46,15 +67,3 @@ document.addEventListener("DOMContentLoaded", function () {
         listenForPingChanges(hole, buttons[i]);
     }
 });
-
-// Shows what button is clicked to be displayed on text area
-const textArea = document.getElementsByClassName('textArea')[0];
-const buttons = document.getElementsByClassName('holeButton');
-
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', function(event) {
-        const buttonText = event.target.textContent;
-        textArea.value = buttonText;
-    }); 
-}
-
