@@ -23,6 +23,7 @@ body {
     border-radius: 5px;
     font: 25px 'Segoe UI';
     color: white;
+    overflow: hidden;
 }
 
 .container {
