@@ -17,12 +17,18 @@
 
         <div class="buttonBackground">
             <button class="mainButton" onclick="RequestBevCart()">Request BevCart</button>
-            <button class="hidden" id="chino" onclick="GoChino()">Chino Creek Course</button>
-            <button class="hidden" id="butter" onclick="GoButter()">Butterfield Stage Course</button>
+            <select class="hidden" id="select-id">
+            <option value="">Select the Course</option>
+            <option value="1">Chino Creek Course</option>
+            <option value="2">Butterfield Stage Course</option>
+            </select>
+            <br>
+            <button class="hidden" id="go-btn" onclick="GoCourse()">Go!</button>
             <button class="mainButton" onclick="RequestAssistance()">Request Assistance</button>
             <button class="mainButton" onclick="GoLogin()">Login</button>
-        </div>
-    </div>
+            </div>
+            </div>
+            
 
     <script src="EP-QRpage.js"></script>
 </body>
