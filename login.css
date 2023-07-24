@@ -1,0 +1,99 @@
+h1 {
+    text-align: center;
+    font: 40px 'Segoe UI';
+    color: white;
+    margin-top: 3rem;
+}
+
+body {
+    font-family: 'Segoe UI';
+    font-size: 15px;
+<<<<<<< HEAD
+    background: -webkit-linear-gradient(to right, #508962, #306a4a);
+    background: linear-gradient(to right, #508962, #306a4a);
+=======
+
+    background: -webkit-linear-gradient(to right, #508962, #306a4a);
+    background: linear-gradient(to right, #508962, #306a4a);
+    
+>>>>>>> eb83be807ee35eb5db39f23857b972540ea40358
+    color: #508962;
+    font-weight: 500;
+}   
+
+h3 {
+    text-align: center;
+    font-size: 25px;
+    font-weight:500;
+}
+
+input[type=email], input[type=password]{
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 15px 18px;
+    box-sizing: border-box;
+    border: 2px solid lightgray;
+}
+
+button {
+    background-color: #508962;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 5px;
+    margin: 7px 0;
+    width: 100%;
+    font-size: 18px;
+    border: transparent;
+    text-transform: uppercase;
+}
+
+button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+form {
+    width:25em;
+    margin: auto;
+    color: #508962;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.63);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 20px 30px 30px 30px;
+    
+}
+
+.headingsContainer{
+    text-align: center;
+}
+.content{
+    padding: 16px;
+}
+
+.register{
+    color: black;
+    text-align: center;
+  }
+  
+  .register a{
+    color: #508962;
+  }
+  
+  .register a:link{
+    text-decoration: none;
+  }
+
+@media screen and (max-width: 600px) {
+    form{
+      width: 25rem;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    form{
+      width: 20rem;
+    }
+  }
