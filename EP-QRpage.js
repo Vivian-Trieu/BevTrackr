@@ -19,7 +19,11 @@ function GoCourse() {
 }
 
 function RequestAssistance() {
+    var select_id = document.getElementById('select-id');
+    var go_btn = document.getElementById('go-btn');
 
+    select_id.classList.remove('hidden');
+    go_btn.classList.remove('hidden');
 }
 
 function GoLogin() {
