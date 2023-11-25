@@ -1,24 +1,25 @@
 // Initialize Firebase
-var firebaseConfig = {
-    apiKey: "AIzaSyDj0QJk8Ptz0N_WjHg76iFhY3f2fBmStcM",
-    authDomain: "app-to-test-multiple-users.firebaseapp.com",
-    databaseURL: "https://app-to-test-multiple-users-default-rtdb.firebaseio.com",
-    projectId: "app-to-test-multiple-users",
-    storageBucket: "app-to-test-multiple-users.appspot.com",
-    messagingSenderId: "342422003892",
-    appId: "1:342422003892:web:77cae1a2d537be989737e1"
-};
+const firebaseConfig = {
+    apiKey: "AIzaSyAXaB2X9YrOQLGg-B8zWjtVfoco1KKuW6A",
+    authDomain: "carttracker-a5166.firebaseapp.com",
+    databaseURL: "https://carttracker-a5166-default-rtdb.firebaseio.com/",
+    projectId: "carttracker-a5166",
+    storageBucket: "carttracker-a5166.appspot.com",
+    messagingSenderId: "638960560715",
+    appId: "1:638960560715:web:a8242b5a9165f5b1657bce",
+    measurementId: "G-5FTKR9GYP5"
+  };
 
 firebase.initializeApp(firebaseConfig);
 
 function togglePingStatus(hole) {
     // Get the current ping status from the Firebase database
-    firebase.database().ref('listData/hole' + hole + '/ping').once('value').then(function (snapshot) {
+    firebase.database().ref('ElPradoTest/hole' + hole + '/ping').once('value').then(function (snapshot) {
         var currentStatus = snapshot.val();
 
         // Update the ping status only if it is currently true
         if (currentStatus === true) {
-            firebase.database().ref('listData/hole' + hole).update({
+            firebase.database().ref('ElPradoTest/hole' + hole).update({
                 ping: false
             });
         }
@@ -27,7 +28,7 @@ function togglePingStatus(hole) {
 
 // Listen for changes in the ping value and update button color accordingly
 function listenForPingChanges(hole, button) {
-    firebase.database().ref('listData/hole' + hole + '/ping').on('value', function (snapshot) {
+    firebase.database().ref('ElPradoTest/hole' + hole + '/ping').on('value', function (snapshot) {
         var pingValue = snapshot.val();
 
         // Check if the ping value changed from true to false
