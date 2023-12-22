@@ -13,16 +13,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 var userLongitude = position.coords.longitude;
 
                 // Check if the user is within 7 kilometers of the target location
-                var targetLatitude = 33.948292;
-                var targetLongitude = -117.662231;
+                var targetLatitude = 36.110810;
+                var targetLongitude = -115.212300;
                 var distance = calculateDistance(userLatitude, userLongitude, targetLatitude, targetLongitude);
 
-                if (distance <= 7) {
+                if (distance <= 50) {
                     // User is within 7 kilometers, show the popup
                     popupContainer.style.display = 'flex';
                 } else {
                     // User is not within 7 kilometers, show an error message
-                    alert('You are not near any golf course. Try again.');
+                    alert('You are not near the specified location. Try again.');
                 }
             },
             function (error) {
@@ -38,13 +38,15 @@ document.addEventListener('DOMContentLoaded', function () {
     yesBtn.addEventListener('click', function () {
         // Perform actions for "Yes"
         alert('You selected "Yes"');
-        popupContainer.style.display = 'none';
+        // Redirect to map page
+        window.location.href = 'map.html';
     });
 
     noBtn.addEventListener('click', function () {
         // Perform actions for "No"
         alert('You selected "No"');
-        popupContainer.style.display = 'none';
+        // Redirect to any other page, login for now
+        window.location.href = 'login.html';
     });
 
     // Disable closing by clicking outside of the popup
