@@ -1,0 +1,41 @@
+body {
+    font-family: 'Segoe UI';
+    background: -webkit-linear-gradient(to right, #508962, #306a4a);
+    background: linear-gradient(to right, #508962, #306a4a);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-container {
+    display: none;
+}
+
+.popup {
+    width: 400px; /* Adjust the width as needed */
+    height: 170px; /* Adjust the height as needed */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Align items to the bottom */
+}
+
+.popup-content {
+    text-align: center;
+    margin: 20px; /* Add margin to center text vertically */
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #508962;
+    color: #fff;
+    border: none;
+    border-radius: 5px; /* Add rounded corners */
+}
