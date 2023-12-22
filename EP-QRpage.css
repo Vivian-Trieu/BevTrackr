@@ -1,0 +1,83 @@
+h1 {
+    text-align: center;
+    font: 40px 'Segoe UI';
+    color: white;
+    margin-top: 3rem;
+}
+
+body {
+    font-family: 'Segoe UI';
+    font-size: 15px;
+    background: -webkit-linear-gradient(to right, #508962, #306a4a);
+    background: linear-gradient(to right, #508962, #306a4a);
+}   
+
+.textArea {
+    width: 150px;
+    height: 30px;
+    resize: none;
+    margin-top: 15px;
+    text-align: center;
+    padding: 15px 1px;
+    background-color: #306a4a;
+    border-radius: 5px;
+    font: 25px 'Segoe UI';
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+    display: block;
+}
+
+.mainButton {
+    margin-top: 50px;
+    margin-bottom: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font: 15px 'Segoe UI';
+    color: #306a4a;
+}
+
+#hole6 {
+    margin-bottom: 0px;
+}
+
+.buttonBackground {
+    width:15em;
+    margin: auto;
+    color: #508962;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.63);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 20px 30px 30px 30px;
+    
+}
+
+hr {
+    margin-top: 30px;
+}
+
+.holeButton:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.pinged {
+    background-color: #306a4a;
+    box-shadow: 0 0 15px 5px #ffffff;
+    color: white;
+}
+
+.hidden {
+    
+}
